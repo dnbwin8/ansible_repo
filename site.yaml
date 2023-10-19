@@ -2,7 +2,20 @@
 - hosts: nodegrp
   become: yes
   tasks:
-  - name: task1
-    debug:
-    msg: "task1 executed"
--
+       - name: task1
+         debug:
+            msg: "task1 executed"
+         tags: tag1
+       - name: task2
+         debug:
+            msg: "task2 executed"
+         tags: tag2
+       - name: task3
+         debug:
+            msg: "task3 executed"
+         tags: tag3
+         
+       - name: task4
+         debug:
+            msg: "task4 executed"
+         tags: tag4
