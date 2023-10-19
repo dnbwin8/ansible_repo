@@ -1,0 +1,13 @@
+---
+- hosts: nodegrp
+  become: yes
+  tasks:
+  - name: task1
+    debug:
+    msg: "task1 executed"
+   notify:
+    - hdl1
+   handlers:
+  - name: hdl1
+     debug:
+      msg: "hdl1 executed"
